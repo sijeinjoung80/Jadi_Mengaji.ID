@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User account registration details and subscription state",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "username": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "password": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "package": { "type": "string" },
+        "totalMeetings": { "type": "number" },
+        "remainingMeetings": { "type": "number" },
+        "paymentStatus": { "type": "string" },
+        "paymentReceipt": { "type": "string" },
+        "activationCode": { "type": "string" },
+        "sessionsCompleted": { "type": "number" }
+      },
+      "required": ["id", "name", "username", "email", "role", "password"]
+    },
+    "ustadz": {
+      "title": "Ustadz",
+      "description": "Details of tutoring ustadz",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "initials": { "type": "string" },
+        "specialization": { "type": "string" },
+        "desc": { "type": "string" }
+      },
+      "required": ["id", "name", "initials", "specialization", "desc"]
+    },
+    "materials": {
+      "title": "Material",
+      "description": "PDF or Image learning files uploaded by admin",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "type": { "type": "string" },
+        "fileName": { "type": "string" },
+        "fileData": { "type": "string" },
+        "description": { "type": "string" },
+        "uploadedAt": { "type": "number" }
+      },
+      "required": ["id", "title", "type", "fileName", "fileData", "uploadedAt"]
+    },
+    "messages": {
+      "title": "Message",
+      "description": "Consultation messages exchanged between users and ustadz",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ustadz": { "type": "string" },
+        "subject": { "type": "string" },
+        "sender": { "type": "string" },
+        "senderUid": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "timestampMs": { "type": "number" },
+        "isFromUstadz": { "type": "boolean" }
+      },
+      "required": ["id", "ustadz", "sender", "senderUid", "text", "timestampMs", "isFromUstadz"]
+    },
+    "progress": {
+      "title": "Progress",
+      "description": "Student reading progression logs",
+      "type": "object",
+      "properties": {
+        "surah": { "type": "string" },
+        "timestamp": { "type": "number" }
+      },
+      "required": ["surah", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/artifacts/{appId}/public/data/users/{username}": {
+      "schema": "users",
+      "description": "Public registry of student profiles"
+    },
+    "/artifacts/{appId}/public/data/ustadz/{ustadzId}": {
+      "schema": "ustadz",
+      "description": "Public registry of Islamic teachers"
+    },
+    "/artifacts/{appId}/public/data/materials/{materialId}": {
+      "schema": "materials",
+      "description": "Public repository of syllabus files"
+    },
+    "/artifacts/{appId}/public/data/messages/{messageId}": {
+      "schema": "messages",
+      "description": "Public records of consultations and responses"
+    },
+    "/artifacts/{appId}/users/{userId}/progress/lastRead": {
+      "schema": "progress",
+      "description": "Private user bookmark details"
+    }
+  }
+}

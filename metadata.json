@@ -1,0 +1,8 @@
+{
+  "name": "Jadi Mengaji.ID",
+  "description": "Platform digital mengaji online interaktif terpadu dengan integrasi ustadz AI pintar, tartil terjemahan otomatis, dan sinkronisasi real-time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
