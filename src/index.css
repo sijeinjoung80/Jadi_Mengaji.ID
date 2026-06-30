@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Amiri", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Premium Modern 'Teman Pelajar' Slate-Blue Color Palette - Sharper Edition */
+  --color-teal-50: #edf4fe;     /* Sharper white-blue glow */
+  --color-teal-100: #d7e8fe;    /* Brighter, sharper extremely soft light blue */
+  --color-teal-200: #b5d5ff;    /* Much sharper pastel light blue */
+  --color-teal-300: #85bcff;    /* Richer, sharper bright sky blue */
+  --color-teal-400: #579fff;    /* Highly vibrant medium-sky blue */
+  --color-teal-500: #2b75eb;    /* Sharper main accent blue */
+  --color-teal-600: #2563eb;    /* Royal bright blue */
+  --color-teal-700: #1d4ed8;    /* Deep royal blue */
+  --color-teal-800: #1e3a8a;    /* Rich indigo navy blue */
+  --color-teal-900: #152954;    /* Beautiful dark blue (biru tua) */
+  --color-teal-950: #0c1a3a;    /* Gorgeous soft deep midnight dark blue */
+
+  /* Royal Luxury Gold (Emas/Gold) Color Palette */
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f1b315;     /* Vibrant Gold */
+  --color-gold-600: #d4af37;     /* Classic Metallic Gold */
+  --color-gold-700: #b59410;     /* Rich Antique Gold */
+  --color-gold-800: #9a7b0c;     /* Deep Shadow Gold */
+  --color-gold-900: #78350f;     /* Warm Amber Gold */
+  --color-gold-950: #2a1a05;     /* Dark Golden Charcoal Mocha */
+}
+
+/* Custom fade-in and micro-animation styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* Custom scrollbars for a clean workspace look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.45);
+}
